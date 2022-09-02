@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="FreeRTOS_Source">
+      <UniqueIdentifier>{ec5ef53a-cceb-4f91-b874-8b1f6dcd9db3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FreeRTOS_Source\include">
+      <UniqueIdentifier>{decbb6aa-750b-44f2-b403-9debd7513707}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FreeRTOS_Source\portable">
+      <UniqueIdentifier>{1178ed0e-c07b-4638-a546-8222f1c670fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FreeRTOS_Source\portable\MemMang">
+      <UniqueIdentifier>{e55ca85d-da30-4199-b518-220ae07d8a91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FreeRTOS_Source\portable\MSVC-MingW">
+      <UniqueIdentifier>{9cc193d8-076c-4cf4-8aa0-fcb935e9c3f9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeRTOS_Source\event_groups.c">
+      <Filter>FreeRTOS_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeRTOS_Source\list.c">
+      <Filter>FreeRTOS_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeRTOS_Source\queue.c">
+      <Filter>FreeRTOS_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeRTOS_Source\tasks.c">
+      <Filter>FreeRTOS_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeRTOS_Source\timers.c">
+      <Filter>FreeRTOS_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeRTOS_Source\portable\MemMang\heap_4.c">
+      <Filter>FreeRTOS_Source\portable\MemMang</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeRTOS_Source\portable\MSVC-MingW\port.c">
+      <Filter>FreeRTOS_Source\portable\MSVC-MingW</Filter>
+    </ClCompile>
+    <ClCompile Include="Supporting_Functions\supporting_functions.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="FreeRTOS_Source\readme.txt">
+      <Filter>FreeRTOS_Source</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FreeRTOS_Source\include\croutine.h">
+      <Filter>FreeRTOS_Source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOS_Source\include\deprecated_definitions.h">
+      <Filter>FreeRTOS_Source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOS_Source\include\event_groups.h">
+      <Filter>FreeRTOS_Source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOS_Source\include\FreeRTOS.h">
+      <Filter>FreeRTOS_Source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOS_Source\include\list.h">
+      <Filter>FreeRTOS_Source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOS_Source\include\mpu_wrappers.h">
+      <Filter>FreeRTOS_Source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOS_Source\include\portable.h">
+      <Filter>FreeRTOS_Source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOS_Source\include\projdefs.h">
+      <Filter>FreeRTOS_Source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOS_Source\include\queue.h">
+      <Filter>FreeRTOS_Source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOS_Source\include\semphr.h">
+      <Filter>FreeRTOS_Source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOS_Source\include\StackMacros.h">
+      <Filter>FreeRTOS_Source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOS_Source\include\task.h">
+      <Filter>FreeRTOS_Source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOS_Source\include\timers.h">
+      <Filter>FreeRTOS_Source\include</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeRTOS_Source\portable\MSVC-MingW\portmacro.h">
+      <Filter>FreeRTOS_Source\portable\MSVC-MingW</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\FreeRTOSConfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Supporting_Functions\supporting_functions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\main.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
