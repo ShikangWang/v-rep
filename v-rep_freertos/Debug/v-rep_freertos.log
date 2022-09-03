@@ -1,1 +1,4 @@
-﻿  v-rep_freertos.vcxproj -> D:\git-repository\v-rep\v-rep_freertos\Debug\v-rep_freertos.exe
+﻿  main.c
+D:\git-repository\v-rep\v-rep_freertos\src\main.c(47,34): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\main.c(25,6): warning C4101: “joint3Handle”: 未引用的局部变量
+  v-rep_freertos.vcxproj -> D:\git-repository\v-rep\v-rep_freertos\Debug\v-rep_freertos.exe
