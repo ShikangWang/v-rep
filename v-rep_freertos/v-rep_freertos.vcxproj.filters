@@ -57,6 +57,9 @@
     <ClCompile Include="Supporting_Functions\supporting_functions.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\motor.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="FreeRTOS_Source\readme.txt">

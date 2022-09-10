@@ -13,12 +13,7 @@
 //
 //	}
 //}
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include "extApi.h"
-
-#define PI 3.1415926
+#include "main.h"
 
 int main()
 {

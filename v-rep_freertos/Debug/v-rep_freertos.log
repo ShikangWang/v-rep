@@ -1,7 +1,11 @@
 ﻿  main.c
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(57,71): warning C4244: “函数”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(26,6): warning C4101: “PositionControlHandle”: 未引用的局部变量
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(34,8): warning C4101: “positionmove”: 未引用的局部变量
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(33,8): warning C4101: “position”: 未引用的局部变量
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(28,6): warning C4101: “objectHandle”: 未引用的局部变量
+D:\git-repository\v-rep\v-rep_freertos\src\main.c(52,71): warning C4244: “函数”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\main.c(21,6): warning C4101: “PositionControlHandle”: 未引用的局部变量
+D:\git-repository\v-rep\v-rep_freertos\src\main.c(29,8): warning C4101: “positionmove”: 未引用的局部变量
+D:\git-repository\v-rep\v-rep_freertos\src\main.c(28,8): warning C4101: “position”: 未引用的局部变量
+D:\git-repository\v-rep\v-rep_freertos\src\main.c(23,6): warning C4101: “objectHandle”: 未引用的局部变量
+  motor.c
+  正在生成代码...
+D:\git-repository\v-rep\v-rep_freertos\src\motor.c(12): warning C4716: “jointVelocityCtrl”: 必须返回一个值
+D:\git-repository\v-rep\v-rep_freertos\src\motor.c(16): warning C4716: “jointPositionCtrl”: 必须返回一个值
   v-rep_freertos.vcxproj -> D:\git-repository\v-rep\v-rep_freertos\Debug\v-rep_freertos.exe
