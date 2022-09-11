@@ -1,19 +1,7 @@
-﻿//#include "stdio.h"
-//#include"extApi.h"
-//
-//int main() 
-//{
-//	int ID = simxStart("127.0.0.1", 19997, 1, 1, 1000, 5);
-//
-//	if (ID != -1) {
-//		printf("susseful");
-//		simxStartSimulation(ID, simx_opmode_oneshot);
-//	}
-//	while (1) {
-//
-//	}
-//}
-#include "main.h"
+﻿#include "main.h"
+
+
+int clientID;
 
 int main()
 {
@@ -37,33 +25,103 @@ int main()
 		int count = 0;
 		//extApi_sleepMs(300);
 		
-		while (simxGetConnectionId(clientID) != -1)
+		//while (simxGetConnectionId(clientID) != -1)
 		{
-			count++;
-			//simxGetObjectHandle(clientID, "IRB140_manipulationSphere", &PositionControlHandle, simx_opmode_oneshot);
-			//state = simxGetObjectPosition(clientID, PositionControlHandle, -1, position, simx_opmode_blocking);
-			//positionmove[0] = position[0];
-			//positionmove[1] = position[1] +0.01 * sin(count / 10.0);
-			//positionmove[2] = position[2];
-			//simxSetObjectPosition(clientID, PositionControlHandle, -1, positionmove, simx_opmode_oneshot);
-			//printf("(%f,%f,%f)\r\n", position[0], position[1], position[2]);
-			simxGetObjectHandle(clientID, "IRB140_joint1", &joint1Handle, simx_opmode_oneshot);
-			simxGetJointPosition(clientID, joint1Handle, &joint1_position, simx_opmode_oneshot);
-			simxSetJointTargetPosition(clientID, joint1Handle, joint1_position + 0.1*PI, simx_opmode_oneshot);
+			xTaskCreate(joint1Ctrl, "joint1Ctrl", 1000, NULL, 2, NULL);
+			xTaskCreate(joint2Ctrl, "joint2Ctrl", 1000, NULL, 2, NULL);
+			xTaskCreate(joint3Ctrl, "joint3Ctrl", 1000, NULL, 2, NULL);
+			xTaskCreate(joint4Ctrl, "joint4Ctrl", 1000, NULL, 2, NULL);
+			xTaskCreate(joint5Ctrl, "joint5Ctrl", 1000, NULL, 2, NULL);
+			xTaskCreate(joint6Ctrl, "joint6Ctrl", 1000, NULL, 2, NULL);
 
-			/*关节速度控制*/
-			//state = simxSetJointTargetVelocity(clientID, joint1Handle, 0.2 * PI, simx_opmode_oneshot);
-			//simxGetObjectVelocity(clientID, joint1Handle, linev, anglev, simx_opmode_oneshot);
-			//printf("(%f,%f,%f) (%f, %f, %f)\n", anglev[0], anglev[1], anglev[2], linev[0], linev[1], linev[2]);
-
+			vTaskStartScheduler();
 		}
 
-		simxFinish(clientID);
+		//simxFinish(clientID);
 	}
 	else {
 		printf("V-rep can't be connected.");
 		//extApi_sleepMs(300);
 	}
+	
 
 	return 0;
+}
+
+void joint1Ctrl(void)
+{
+	int count = 0;
+	while (1)
+	{
+		count++;
+		printf("joint1Ctrling\n");
+		if (count == 360)	count = 0;
+		jointPositionCtrl(clientID, 1, count);
+		vTaskDelay(50 / portTICK_PERIOD_MS);//20Hz
+	}
+}
+
+void joint2Ctrl(void)
+{
+	int count = 0;
+	while (1)
+	{
+		count++;
+		printf("joint2Ctrling\n");
+		if (count == 90)	count = 0;
+		jointPositionCtrl(clientID, 2, count);
+		vTaskDelay(50 / portTICK_PERIOD_MS);//20Hz
+	}
+}
+
+void joint3Ctrl(void)
+{
+	int count = 0;
+	while (1)
+	{
+		count++;
+		printf("joint3Ctrling\n");
+		if (count == 90)	count = 0;
+		jointPositionCtrl(clientID, 3, count);
+		vTaskDelay(50 / portTICK_PERIOD_MS);//20Hz
+	}
+}
+
+void joint4Ctrl(void)
+{
+	int count = 0;
+	while (1)
+	{
+		count++;
+		printf("joint4Ctrling\n");
+		if (count == 90)	count = 0;
+		jointPositionCtrl(clientID, 4, count);
+		vTaskDelay(50 / portTICK_PERIOD_MS);//20Hz
+	}
+}
+
+void joint5Ctrl(void)
+{
+	int count = 0;
+	while (1)
+	{
+		count++;
+		printf("joint5Ctrling\n");
+		if (count == 360)	count = 0;
+		jointPositionCtrl(clientID, 5, count);
+		vTaskDelay(50 / portTICK_PERIOD_MS);//20Hz
+	}
+}
+
+void joint6Ctrl(void)
+{
+	int count = 0;
+	while (1)
+	{
+		count++;
+		printf("joint6Ctrling\n");
+		if (count == 90)	count = 0;
+		jointPositionCtrl(clientID, 6, count);
+		vTaskDelay(50 / portTICK_PERIOD_MS);//20Hz
+	}
 }

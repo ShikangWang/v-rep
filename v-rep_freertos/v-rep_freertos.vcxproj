@@ -50,6 +50,7 @@
     <ClInclude Include="FreeRTOS_Source\portable\MSVC-MingW\portmacro.h" />
     <ClInclude Include="inc\FreeRTOSConfig.h" />
     <ClInclude Include="inc\main.h" />
+    <ClInclude Include="inc\motor.h" />
     <ClInclude Include="Supporting_Functions\supporting_functions.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

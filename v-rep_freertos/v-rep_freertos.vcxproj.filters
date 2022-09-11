@@ -118,5 +118,8 @@
     <ClInclude Include="inc\main.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="inc\motor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

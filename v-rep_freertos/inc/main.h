@@ -1,12 +1,20 @@
 #ifndef __MAIN_H
 #define __MAIN_H
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include "extApi.h"
 
+#include "stdio.h"
+#include "extApi.h"
+#include "math.h"
+#include "FreeRTOS.h"
+#include "task.h"
 #include "motor.h"
 
-#define PI 3.1415926
+#define PI	3.1415926
+
+void joint1Ctrl(void);
+void joint2Ctrl(void);
+void joint3Ctrl(void);
+void joint4Ctrl(void);
+void joint5Ctrl(void);
+void joint6Ctrl(void);
 
 #endif
