@@ -7,8 +7,11 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "motor.h"
+#include "ik.h"
 
 #define PI	3.1415926
+
+extern simxInt clientID;
 
 void joint1Ctrl(void);
 void joint2Ctrl(void);

@@ -7,7 +7,7 @@
 		velocity : 需要达到的速度
 @return	1:设置成功 0 : 设置失败
 */
-simxInt jointVelocityCtrl(simxInt clientID, simxInt jointID, simxFloat velocity)
+simxInt jointVelocityCtrl(simxInt jointID, simxFloat velocity)
 {
 	simxInt jointHandle;
 	char jointName[7] = "joint";
@@ -30,7 +30,7 @@ simxInt jointVelocityCtrl(simxInt clientID, simxInt jointID, simxFloat velocity)
 		velocity : 需要达到的位置
 @return	1:设置成功 0 : 设置失败
 */
-simxInt jointPositionCtrl(simxInt clientID, simxInt jointID, simxFloat position)
+simxInt jointPositionCtrl(simxInt jointID, simxFloat position)
 {
 	simxInt jointHandle;
 	char jointName[7] = "joint";

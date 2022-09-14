@@ -60,6 +60,9 @@
     <ClCompile Include="src\motor.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\ik.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="FreeRTOS_Source\readme.txt">
@@ -119,6 +122,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="inc\motor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ik.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

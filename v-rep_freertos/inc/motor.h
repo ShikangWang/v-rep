@@ -4,8 +4,8 @@
 #include "main.h"
 
 
-simxInt jointVelocityCtrl(simxInt clientID, simxInt jointID, simxFloat velocity);
-simxInt jointPositionCtrl(simxInt clientID, simxInt jointID, simxFloat position);
+simxInt jointVelocityCtrl(simxInt jointID, simxFloat velocity);
+simxInt jointPositionCtrl(simxInt jointID, simxFloat position);
 
 
 #endif

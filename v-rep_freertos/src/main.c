@@ -2,6 +2,7 @@
 
 
 int clientID;
+float jointAngle[6];
 
 int main()
 {
@@ -56,7 +57,7 @@ void joint1Ctrl(void)
 		count++;
 		printf("joint1Ctrling\n");
 		if (count == 360)	count = 0;
-		jointPositionCtrl(clientID, 1, count);
+		jointPositionCtrl(1, count);
 		vTaskDelay(50 / portTICK_PERIOD_MS);//20Hz
 	}
 }
@@ -69,7 +70,7 @@ void joint2Ctrl(void)
 		count++;
 		printf("joint2Ctrling\n");
 		if (count == 90)	count = 0;
-		jointPositionCtrl(clientID, 2, count);
+		jointPositionCtrl(2, count);
 		vTaskDelay(50 / portTICK_PERIOD_MS);//20Hz
 	}
 }
@@ -82,7 +83,7 @@ void joint3Ctrl(void)
 		count++;
 		printf("joint3Ctrling\n");
 		if (count == 90)	count = 0;
-		jointPositionCtrl(clientID, 3, count);
+		jointPositionCtrl(3, count);
 		vTaskDelay(50 / portTICK_PERIOD_MS);//20Hz
 	}
 }
@@ -95,7 +96,7 @@ void joint4Ctrl(void)
 		count++;
 		printf("joint4Ctrling\n");
 		if (count == 90)	count = 0;
-		jointPositionCtrl(clientID, 4, count);
+		jointPositionCtrl(4, count);
 		vTaskDelay(50 / portTICK_PERIOD_MS);//20Hz
 	}
 }
@@ -108,7 +109,7 @@ void joint5Ctrl(void)
 		count++;
 		printf("joint5Ctrling\n");
 		if (count == 360)	count = 0;
-		jointPositionCtrl(clientID, 5, count);
+		jointPositionCtrl(5, count);
 		vTaskDelay(50 / portTICK_PERIOD_MS);//20Hz
 	}
 }
@@ -121,7 +122,7 @@ void joint6Ctrl(void)
 		count++;
 		printf("joint6Ctrling\n");
 		if (count == 90)	count = 0;
-		jointPositionCtrl(clientID, 6, count);
+		jointPositionCtrl(6, count);
 		vTaskDelay(50 / portTICK_PERIOD_MS);//20Hz
 	}
 }
