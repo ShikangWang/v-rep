@@ -1,37 +1,25 @@
 ﻿  ik.c
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(9,7): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(11,11): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(12,12): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(15,41): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(16,42): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(18,20): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(21,41): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(5,24): warning C4101: “a5”: 未引用的局部变量
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(5,28): warning C4101: “a6”: 未引用的局部变量
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(5,20): warning C4101: “a4”: 未引用的局部变量
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(7,28): warning C4101: “g3”: 未引用的局部变量
-  main.c
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(31,26): warning C4113: “void (__cdecl *)(void)”和“TaskFunction_t”的参数列表不同
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(32,26): warning C4113: “void (__cdecl *)(void)”和“TaskFunction_t”的参数列表不同
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(33,26): warning C4113: “void (__cdecl *)(void)”和“TaskFunction_t”的参数列表不同
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(34,26): warning C4113: “void (__cdecl *)(void)”和“TaskFunction_t”的参数列表不同
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(35,26): warning C4113: “void (__cdecl *)(void)”和“TaskFunction_t”的参数列表不同
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(36,26): warning C4113: “void (__cdecl *)(void)”和“TaskFunction_t”的参数列表不同
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(10,6): warning C4101: “PositionControlHandle”: 未引用的局部变量
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(18,8): warning C4101: “positionmove”: 未引用的局部变量
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(17,8): warning C4101: “position”: 未引用的局部变量
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(12,6): warning C4101: “objectHandle”: 未引用的局部变量
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(16,8): warning C4101: “joint1_position”: 未引用的局部变量
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(11,6): warning C4101: “joint1Handle”: 未引用的局部变量
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(60,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(73,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(86,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(99,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(112,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(125,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-  motor.c
-D:\git-repository\v-rep\v-rep_freertos\src\motor.c(18,68): warning C4244: “函数”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\motor.c(40,69): warning C4244: “函数”: 从“double”转换到“simxFloat”，可能丢失数据
-  正在生成代码...
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(24): warning C4716: “InverseKinematics”: 必须返回一个值
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(14,7): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(16,10): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(17,11): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(20,41): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(22,59): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(24,20): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(27,41): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(31,28): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(32,28): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(33,20): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(34,29): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(35,30): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(36,20): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(37,20): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(38,20): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(44,7): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(45,27): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(49,8): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(50,28): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(52,8): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(53,28): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(58,24): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(7,32): warning C4101: “g3”: 未引用的局部变量
   v-rep_freertos.vcxproj -> D:\git-repository\v-rep\v-rep_freertos\Debug\v-rep_freertos.exe

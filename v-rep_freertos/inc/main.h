@@ -12,6 +12,7 @@
 #define PI	3.1415926
 
 extern simxInt clientID;
+extern simxFloat a1, a2, a3, a4, a5, a6;//ÁùÖáµÄ½Ç¶È
 
 void joint1Ctrl(void);
 void joint2Ctrl(void);

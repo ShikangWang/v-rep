@@ -20,22 +20,32 @@ int main()
 	//imucs
 	int clientID = simxStart("127.0.0.1", Port, 1, 1, 2000, 5);
 
-	if (clientID != -1)
+	if (1)//(clientID != -1)
 	{
 		printf("V-rep connected.\n");
 		int count = 0;
 		//extApi_sleepMs(300);
 		
 		//while (simxGetConnectionId(clientID) != -1)
-		{
-			xTaskCreate(joint1Ctrl, "joint1Ctrl", 1000, NULL, 2, NULL);
-			xTaskCreate(joint2Ctrl, "joint2Ctrl", 1000, NULL, 2, NULL);
-			xTaskCreate(joint3Ctrl, "joint3Ctrl", 1000, NULL, 2, NULL);
-			xTaskCreate(joint4Ctrl, "joint4Ctrl", 1000, NULL, 2, NULL);
-			xTaskCreate(joint5Ctrl, "joint5Ctrl", 1000, NULL, 2, NULL);
-			xTaskCreate(joint6Ctrl, "joint6Ctrl", 1000, NULL, 2, NULL);
+		//{
+		//	xTaskCreate(joint1Ctrl, "joint1Ctrl", 1000, NULL, 2, NULL);
+		//	xTaskCreate(joint2Ctrl, "joint2Ctrl", 1000, NULL, 2, NULL);
+		//	xTaskCreate(joint3Ctrl, "joint3Ctrl", 1000, NULL, 2, NULL);
+		//	xTaskCreate(joint4Ctrl, "joint4Ctrl", 1000, NULL, 2, NULL);
+		//	xTaskCreate(joint5Ctrl, "joint5Ctrl", 1000, NULL, 2, NULL);
+		//	xTaskCreate(joint6Ctrl, "joint6Ctrl", 1000, NULL, 2, NULL);
 
-			vTaskStartScheduler();
+		//	vTaskStartScheduler();
+		//}
+		simxFloat R[3][3] = {1,0,0,0,1,0,0,0,1};
+		simxFloat x = 0.0, y = 0.0, z = 0.0;
+		while (1)
+		{
+			scanf("%f %f %f", &x, &y, &z);
+			if (InverseKinematics(x, y, z, R))
+				printf("%f %f %f %f %f %f\n", a1, a2, a3, a4, a5, a6);
+			else
+				printf("out of range\n");
 		}
 
 		//simxFinish(clientID);
