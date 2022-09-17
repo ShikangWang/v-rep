@@ -9,7 +9,10 @@
 #include "motor.h"
 #include "ik.h"
 
+#define JOINT_REMOTE_INIT	1
+
 #define PI	3.1415926
+#define L	360	//手臂最前端与最后一个关节的z分量距离
 
 extern simxInt clientID;
 extern simxFloat a1, a2, a3, a4, a5, a6;//六轴的角度

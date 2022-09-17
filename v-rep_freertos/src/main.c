@@ -1,6 +1,7 @@
 ﻿#include "main.h"
 
 
+
 int clientID;
 float jointAngle[6];
 
@@ -20,9 +21,10 @@ int main()
 	//imucs
 	int clientID = simxStart("127.0.0.1", Port, 1, 1, 2000, 5);
 
-	if (1)//(clientID != -1)
+	if (clientID != -1)
 	{
 		printf("V-rep connected.\n");
+		jointInit();
 		int count = 0;
 		//extApi_sleepMs(300);
 		
@@ -37,13 +39,31 @@ int main()
 
 		//	vTaskStartScheduler();
 		//}
-		simxFloat R[3][3] = {1,0,0,0,1,0,0,0,1};
+		simxFloat R0D[3][3] = { 1, 0, 0, 0, 1, 0, 0, 0, 1 };//{1,0,0,0,0.8,-0.6,0,0.6,0.8};
 		simxFloat x = 0.0, y = 0.0, z = 0.0;
+		simxFloat xx = 0.0, yy = 0.0, zz = 0.0;
+
 		while (1)
 		{
-			scanf("%f %f %f", &x, &y, &z);
-			if (InverseKinematics(x, y, z, R))
+			count++;
+			//scanf("%f %f %f", &x, &y, &z);
+			x = 350;
+			y = 500 * sin(count / 2000.0);
+			//if (count == 1000)	count = 0;
+			z = 950;
+			xx = x - L * R0D[0][2];
+			yy = y - L * R0D[1][2];
+			zz = z - L * R0D[2][2];
+			if (InverseKinematics(xx, yy, zz, R0D))
+			{
 				printf("%f %f %f %f %f %f\n", a1, a2, a3, a4, a5, a6);
+				jointPositionCtrl(1, a1);
+				jointPositionCtrl(2, a2);
+				jointPositionCtrl(3, a3);
+				jointPositionCtrl(4, a4);
+				jointPositionCtrl(5, a5);
+				jointPositionCtrl(6, a6);
+			}
 			else
 				printf("out of range\n");
 		}
