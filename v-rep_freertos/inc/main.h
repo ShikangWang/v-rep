@@ -15,7 +15,6 @@
 #define L	360	//手臂最前端与最后一个关节的z分量距离
 
 extern simxInt clientID;
-extern simxFloat a1, a2, a3, a4, a5, a6;//六轴的角度
 
 void joint1Ctrl(void);
 void joint2Ctrl(void);

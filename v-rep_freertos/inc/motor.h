@@ -7,7 +7,7 @@
 simxInt jointVelocityCtrl(simxInt jointID, simxFloat velocity);
 simxInt jointPositionCtrl(simxInt jointID, simxFloat position);
 simxInt jointInit(void);
-simxInt jointAllCtrl(simxFloat position[6]);
+simxInt jointAllCtrl(simxFloat joint_position[6]);
 
 
 #endif
