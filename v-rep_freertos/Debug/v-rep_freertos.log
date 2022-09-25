@@ -1,47 +1,8 @@
-﻿  ik.c
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(21,9): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(23,10): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(24,10): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(27,43): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(30,32): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(31,11): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(32,11): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(35,44): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(38,22): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(41,21): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(44,30): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(45,30): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(46,20): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(47,31): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(48,32): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(49,20): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(50,20): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(51,20): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(57,9): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(58,31): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(62,10): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(63,32): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(65,10): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(66,32): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(68,10): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(73,40): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(14,32): warning C4101: “g3”: 未引用的局部变量
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(105,18): warning C4244: “=”: 从“simxFloat”转换到“simxInt”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(106,18): warning C4244: “=”: 从“simxFloat”转换到“simxInt”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(107,18): warning C4244: “=”: 从“simxFloat”转换到“simxInt”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(108,24): warning C4244: “函数”: 从“simxInt”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(108,28): warning C4244: “函数”: 从“simxInt”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\ik.c(108,32): warning C4244: “函数”: 从“simxInt”转换到“simxFloat”，可能丢失数据
-  main.c
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(26,18): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(51,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(64,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(77,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(90,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(103,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(116,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-  motor.c
-  正在生成代码...
-D:\git-repository\v-rep\v-rep_freertos\src\motor.c(62): warning C4716: “jointInit”: 必须返回一个值
-D:\git-repository\v-rep\v-rep_freertos\src\motor.c(75): warning C4716: “jointAllCtrl”: 必须返回一个值
+﻿  main.c
+D:\git-repository\v-rep\v-rep_freertos\src\main.c(65,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\main.c(78,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\main.c(91,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\main.c(104,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\main.c(117,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\main.c(130,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
   v-rep_freertos.vcxproj -> D:\git-repository\v-rep\v-rep_freertos\Debug\v-rep_freertos.exe

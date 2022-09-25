@@ -9,24 +9,38 @@ int main()
 
 	int clientID = simxStart("127.0.0.1", Port, 1, 1, 2000, 5);
 
-	if (clientID != -1)
+	if(clientID != -1)
 	{
 		printf("V-rep connected.\n");
 		jointInit();
 		int count = 0;
 
-		simxFloat R0D[3][3] = { 1, 0, 0, 0, 1, 0, 0, 0, 1 };//{1,0,0,0,0.8,-0.6,0,0.6,0.8};
-		position_typedef dummy;
-		memcpy(dummy.R0D, R0D, 9 * sizeof(simxInt));
+		simxFloat R0D_default[3][3] = { 1, 0, 0, 0, 1, 0, 0, 0, 1 };//{1,0,0,0,0.8,-0.6,0,0.6,0.8};
+		position_typedef dummy, src, dst;
+		memcpy(dummy.R0D, R0D_default, 9 * sizeof(simxInt));
+		memcpy(src.R0D, R0D_default, 9 * sizeof(simxInt));
+		memcpy(dst.R0D, R0D_default, 9 * sizeof(simxInt));
+		src.x = 350;
+		src.y = -500;
+		src.z = 950;
+
+		dst.x = 400;
+		dst.y = 400;
+		dst.z = 1050;
 
 		while (1)
 		{
-			count++;
-			dummy.x = 350;
-			dummy.y = 500 * sin(count / 4000.0);
-			//if (count == 4000)	count = 0;
-			dummy.z = 950;
-			ArmPositionCtrl(dummy);
+			MovePath(src, dst, 1000);
+			//extApi_sleepMs(1000);
+			MovePath(dst, src, 1000);
+			//extApi_sleepMs(1000);
+			//用于测试机械臂整体控制
+			//count++;
+			//dummy.x = 350;
+			//dummy.y = 500 * sin(count / 4000.0);
+			////if (count == 4000)	count = 0;
+			//dummy.z = 950;
+			//ArmPositionCtrl(dummy);
 		}
 
 		//simxFinish(clientID);

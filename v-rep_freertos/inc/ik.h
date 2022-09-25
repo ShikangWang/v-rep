@@ -15,8 +15,8 @@ typedef struct
 }position_typedef;
 
 simxInt InverseKinematics(position_typedef position, simxFloat a[6]);
-static void MartixPlus(simxFloat R1[][3], simxFloat R2[][3], simxFloat DstR[][3], const simxInt width);
 simxInt ArmPositionCtrl(position_typedef position);
 void MovePath(position_typedef src, position_typedef dst, simxInt t);
+static void MartixPlus(simxFloat R1[][3], simxFloat R2[][3], simxFloat DstR[][3], const simxInt width);
 
 #endif

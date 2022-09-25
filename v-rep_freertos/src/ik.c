@@ -131,30 +131,41 @@ void MovePath(position_typedef src, position_typedef dst, simxInt t)
 	simxFloat v_src[6] = {0,0,0,0,0,0};
 	simxFloat v_dst[6] = {0,0,0,0,0,0};
 
-	simxFloat angle[100][6];
+	simxFloat angle[4000][6];
 
 	//求解出两个位姿1分别对应的六轴角度
-	InverseKinematics(src, a_src);
-	InverseKinematics(dst, a_dst);
-
-	for (int i = 0; i < 6; i++)
+	if (InverseKinematics(src, a_src) && InverseKinematics(dst, a_dst))
 	{
-		//三次函数拟合运动曲线
-		simxFloat k[4];
-		k[0] = a_src[i];
-		k[1] = v_src[i];
-		k[2] = 3 * (a_dst[i] - a_src[i]) / (t * t) - (2 * v_src[i] + v_dst[i]) / t;
-		k[3] = 2 * (a_src[i] - a_dst[i]) / (t * t * t) + (v_src[i] + v_dst[i]) / (t * t);
-
-		for (int j = 0; j < t; j++)
+		for (int i = 0; i < 6; i++)
 		{
-			angle[j][i] = k[0] + k[1] * j + k[2] * j * j + k[3] * j * j * j;
+			a_src[i] *= 1000;
+			a_dst[i] *= 1000;
 		}
 
+		for (int i = 0; i < 6; i++)
+		{
+			//三次函数拟合运动曲线
+			simxFloat k[4];
+			k[0] = a_src[i];
+			k[1] = v_src[i];
+			k[2] = 3 * (a_dst[i] - a_src[i]) / (t * t) - (2 * v_src[i] + v_dst[i]) / t;
+			k[3] = 2 * (a_src[i] - a_dst[i]) / (t * t * t) + (v_src[i] + v_dst[i]) / (t * t);
+			printf("%f %f %f %f\n", k[0], k[1], k[2], k[3]);
+
+			for (int j = 0; j < t; j++)
+			{
+				angle[j][i] = (k[0] + k[1] * j + k[2] * j * j + k[3] * j * j * j) / 1000;
+			}
+		}
 		for (int i = 0; i < t; i++)
 		{
 			jointAllCtrl(angle[i]);
+			printf("%f %f %f %f %f %f\n", angle[i][0], angle[i][1], angle[i][2], angle[i][3], angle[i][4], angle[i][5]);
 		}
+	}
+	else
+	{
+		printf("path error\n");
 	}
 
 }
