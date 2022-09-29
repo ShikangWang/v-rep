@@ -16,7 +16,8 @@ typedef struct
 
 simxInt InverseKinematics(position_typedef position, simxFloat a[6]);
 simxInt ArmPositionCtrl(position_typedef position);
-void MovePath(position_typedef src, position_typedef dst, simxInt t);
+void MovePath(position_typedef src, position_typedef dst);
+void MultipointMove(position_typedef src, position_typedef mid, position_typedef dst);
 static void MartixPlus(simxFloat R1[][3], simxFloat R2[][3], simxFloat DstR[][3], const simxInt width);
 
 #endif

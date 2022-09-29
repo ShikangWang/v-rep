@@ -7,8 +7,10 @@ d:\git-repository\v-rep\v-rep_freertos\debug\freertos_source\list.obj
 d:\git-repository\v-rep\v-rep_freertos\debug\freertos_source\event_groups.obj
 d:\git-repository\v-rep\v-rep_freertos\debug\freertos_source\portable\memmang\heap_4.obj
 d:\git-repository\v-rep\v-rep_freertos\debug\freertos_source\portable\msvc-mingw\port.obj
-d:\git-repository\v-rep\v-rep_freertos\debug\supporting_functions\supporting_functions.obj
+d:\git-repository\v-rep\v-rep_freertos\debug\src\motor.obj
 d:\git-repository\v-rep\v-rep_freertos\debug\src\main.obj
+d:\git-repository\v-rep\v-rep_freertos\debug\src\ik.obj
+d:\git-repository\v-rep\v-rep_freertos\debug\supporting_functions\supporting_functions.obj
 d:\git-repository\v-rep\v-rep_freertos\debug\v-rep_freertos.exe
 d:\git-repository\v-rep\v-rep_freertos\debug\v-rep_freertos.ilk
 d:\git-repository\v-rep\v-rep_freertos\debug\v-rep_freertos.pdb

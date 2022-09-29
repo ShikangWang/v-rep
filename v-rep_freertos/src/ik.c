@@ -17,6 +17,7 @@ simxInt InverseKinematics(position_typedef position, simxFloat a[6])
 	simxFloat f1, f2, f3, g1, g2, g3;//中间变量
 	simxFloat R03Trans[3][3];//0from3
 	simxFloat R36[3][3] = {0,0,0,0,0,0,0,0,0};//6from3
+	memset(a, 0, 6 * sizeof(simxFloat));
 
 	if (r > (A2 + D4) * (A2 + D4) || r < (A2 - D4) * (A2 - D4))
 		return 0;//超出机械臂范围
@@ -30,16 +31,16 @@ simxInt InverseKinematics(position_typedef position, simxFloat a[6])
 	a[1] = asin(z / sqrt(f1 * f1 + f2 * f2)) - atan2(f2, f1);//a[1]求解
 	if (a[1] < 0)
 	{
-		a[2] = -PI + 2 * atan2(y, x) - a[2];
+		a[2] = -PI - a[2];
 		f1 = A2 - D4 * sin(a[2]);
 		f2 = D4 * cos(a[2]);
 		f3 = 0;
-
 		a[1] = asin(z / sqrt(f1 * f1 + f2 * f2)) - atan2(f2, f1);//a[1]求解
 	}
 
 	g1 = cos(a[1]) * f1 - sin(a[1]) * f2;
 	g2 = -f3;
+	g3 = sin(a[1]) * f1 + cos(a[1]) * f2;
 	
 	a[0] = atan2(y, x) - atan2(g2, g1);
 
@@ -60,15 +61,15 @@ simxInt InverseKinematics(position_typedef position, simxFloat a[6])
 	a[4] = acos(R36[1][2]);
 	if (a[4] > PI / 2)	a[4] = PI - a[4];
 	
-	if (abs(sin(a[4]) > 0.05))
+	if (abs(sin(a[4]) > 0.0001))
 	{
 		a[5] = atan(-R36[1][1] / R36[1][0]);
 		if (a[5] > PI / 2)	a[5] = PI - a[5];
 
-		a[3] = atan(-R36[2][2] / R36[2][1]);
-		if (a[3] > PI / 2)	a[3] = PI - a[3];
+		a[4] = atan2(R36[1][0] / cos(a[5]), R36[1][2]);
 
-		a[4] = asin(R36[1][0] / cos(a[5]));
+		a[3] = atan2(R36[2][2] / sin(a[4]), -R36[0][2] / sin(a[4]));
+
  	}
 	else
 	{
@@ -77,6 +78,7 @@ simxInt InverseKinematics(position_typedef position, simxFloat a[6])
 		if (a[3] > PI / 2)	a[3] = -2 * a[5] - a[3];
 	}
 	
+	printf("Angle : %f %f %f %f %f %f\n", a[0], a[1], a[2], a[3], a[4], a[5]);
 	return 1;
 }
 
@@ -104,10 +106,10 @@ static void MartixPlus(simxFloat R1[][3], simxFloat R2[][3], simxFloat DstR[][3]
 simxInt ArmPositionCtrl(position_typedef position)
 {
 	//六轴的角度,a[0]表示joint1的角度，以此类推
-	simxFloat angle[6];
-	if (InverseKinematics(position, angle))
+	simxFloat a[6];
+	if (InverseKinematics(position, a))
 	{
-		jointAllCtrl(angle);
+		jointAllCtrl(a);
 		return 1;
 	}
 	else
@@ -117,29 +119,29 @@ simxInt ArmPositionCtrl(position_typedef position)
 	}
 }
 
+simxFloat angle[TIMES][6];
 /*
-@brief	使机械臂平滑连续运动
+@brief	使机械臂平滑运动到指定位置
 @param	src : 初始位姿; dst : 目标点位姿
-		t : 整体运行时间
 @return	None
 */
-void MovePath(position_typedef src, position_typedef dst, simxInt t)
+void MovePath(position_typedef src, position_typedef dst)
 {
 	simxFloat a_src[6];
 	simxFloat a_dst[6];
 
+	simxInt t = TIMES;
+
 	simxFloat v_src[6] = {0,0,0,0,0,0};
 	simxFloat v_dst[6] = {0,0,0,0,0,0};
-
-	simxFloat angle[4000][6];
 
 	//求解出两个位姿1分别对应的六轴角度
 	if (InverseKinematics(src, a_src) && InverseKinematics(dst, a_dst))
 	{
 		for (int i = 0; i < 6; i++)
 		{
-			a_src[i] *= 1000;
-			a_dst[i] *= 1000;
+			a_src[i] *= 10000;//防止K过小导致误差
+			a_dst[i] *= 10000;
 		}
 
 		for (int i = 0; i < 6; i++)
@@ -150,17 +152,12 @@ void MovePath(position_typedef src, position_typedef dst, simxInt t)
 			k[1] = v_src[i];
 			k[2] = 3 * (a_dst[i] - a_src[i]) / (t * t) - (2 * v_src[i] + v_dst[i]) / t;
 			k[3] = 2 * (a_src[i] - a_dst[i]) / (t * t * t) + (v_src[i] + v_dst[i]) / (t * t);
-			printf("%f %f %f %f\n", k[0], k[1], k[2], k[3]);
+			printf(" K : %f %f %f %f\n", k[0], k[1], k[2], k[3]);
 
-			for (int j = 0; j < t; j++)
+			for (int j = 0; j < TIMES; j++)
 			{
-				angle[j][i] = (k[0] + k[1] * j + k[2] * j * j + k[3] * j * j * j) / 1000;
+				angle[j][i] = (k[0] + k[1] * j + k[2] * j * j + k[3] * j * j * j) / 10000;
 			}
-		}
-		for (int i = 0; i < t; i++)
-		{
-			jointAllCtrl(angle[i]);
-			printf("%f %f %f %f %f %f\n", angle[i][0], angle[i][1], angle[i][2], angle[i][3], angle[i][4], angle[i][5]);
 		}
 	}
 	else
@@ -168,4 +165,70 @@ void MovePath(position_typedef src, position_typedef dst, simxInt t)
 		printf("path error\n");
 	}
 
+}
+
+/*
+@brief	使机械臂平滑运动到指定中间点及中点
+@param	src : 初始位姿; mid : 中间点位姿; dst : 目标点位姿
+@return	None
+*/
+void MultipointMove(position_typedef src, position_typedef mid, position_typedef dst)
+{
+	simxFloat a_src[6];
+	simxFloat a_mid[6];
+	simxFloat a_dst[6];
+
+	simxInt t = TIMES / 2;
+
+	simxFloat v_src[6] = { 0,0,0,0,0,0 };
+	simxFloat v_mid[6] = { 0,0,0,0,0,0 };
+	simxFloat v_dst[6] = { 0,0,0,0,0,0 };
+
+	//求解出两个位姿1分别对应的六轴角度
+	if (InverseKinematics(src, a_src) && InverseKinematics(mid, a_mid) && InverseKinematics(dst, a_dst))
+	{
+		for (int i = 0; i < 6; i++)
+		{
+			a_src[i] *= 10000;//防止K过小导致误差
+			a_mid[i] *= 10000;
+			a_dst[i] *= 10000;
+			v_mid[i] = (a_dst[i] - a_src[i]) / TIMES;
+		}
+
+		for (int i = 0; i < 6; i++)//从src到mid的运动路径拟合
+		{
+			//三次函数拟合运动曲线
+			simxFloat k[4];
+			k[0] = a_src[i];
+			k[1] = v_src[i];
+			k[2] = 3 * (a_mid[i] - a_src[i]) / (t * t) - (2 * v_src[i] + v_mid[i]) / t;
+			k[3] = 2 * (a_src[i] - a_mid[i]) / (t * t * t) + (v_src[i] + v_mid[i]) / (t * t);
+			printf(" K0 : %f %f %f %f\n", k[0], k[1], k[2], k[3]);
+
+			for (int j = 0; j < t; j++)
+			{
+				angle[j][i] = (k[0] + k[1] * j + k[2] * j * j + k[3] * j * j * j) / 10000;
+			}
+		}
+
+		for (int i = 0; i < 6; i++)//从mid到dst的运动路径拟合
+		{
+			//三次函数拟合运动曲线
+			simxFloat k[4];
+			k[0] = a_mid[i];
+			k[1] = v_mid[i];
+			k[2] = 3 * (a_dst[i] - a_mid[i]) / (t * t) - (2 * v_mid[i] + v_dst[i]) / t;
+			k[3] = 2 * (a_mid[i] - a_dst[i]) / (t * t * t) + (v_mid[i] + v_dst[i]) / (t * t);
+			printf(" K1 : %f %f %f %f\n", k[0], k[1], k[2], k[3]);
+
+			for (int j = 0; j < t; j++)
+			{
+				angle[j + t][i] = (k[0] + k[1] * j + k[2] * j * j + k[3] * j * j * j) / 10000;
+			}
+		}
+	}
+	else
+	{
+		printf("path error\n");
+	}
 }

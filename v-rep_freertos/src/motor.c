@@ -55,10 +55,12 @@ simxInt jointInit(void)
 	simxGetObjectHandle(clientID, "joint5", &jointHandle[4], simx_opmode_blocking);
 	simxGetObjectHandle(clientID, "joint6", &jointHandle[5], simx_opmode_blocking);
 
+	memset(present_angle, 0, 6 * sizeof(simxFloat));
 	jointAllCtrl(initPosition);
 #if JOINT_REMOTE_INIT
 	jointAllCtrl(initPosition);
 #endif
+	return 1;
 }
 
 /*
@@ -72,4 +74,5 @@ simxInt jointAllCtrl(simxFloat joint_position[6])
 	{
 		jointPositionCtrl(i + 1, joint_position[i]);
 	}
+	return 1;
 }

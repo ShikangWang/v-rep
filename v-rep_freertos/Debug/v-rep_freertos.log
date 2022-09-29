@@ -1,8 +1,1 @@
-﻿  main.c
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(65,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(78,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(91,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(104,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(117,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-D:\git-repository\v-rep\v-rep_freertos\src\main.c(130,24): warning C4244: “函数”: 从“int”转换到“simxFloat”，可能丢失数据
-  v-rep_freertos.vcxproj -> D:\git-repository\v-rep\v-rep_freertos\Debug\v-rep_freertos.exe
+﻿  v-rep_freertos.vcxproj -> D:\git-repository\v-rep\v-rep_freertos\Debug\v-rep_freertos.exe
