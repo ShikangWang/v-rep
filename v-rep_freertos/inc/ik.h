@@ -3,7 +3,9 @@
 
 #include "main.h"
 
+#define A1	100 // need adjust
 #define A2	350
+#define D3	(-100) //need adjust
 #define D4	560
 
 typedef struct

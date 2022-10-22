@@ -1,1 +1,41 @@
-﻿  v-rep_freertos.vcxproj -> D:\git-repository\v-rep\v-rep_freertos\Debug\v-rep_freertos.exe
+﻿  ik.c
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(25,9): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(28,29): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(29,29): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(31,10): warning C4244: “函数”: 从“simxFloat”转换到“int”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(31,31): warning C4244: “函数”: 从“simxFloat”转换到“int”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(33,10): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(35,15): warning C4244: “函数”: 从“simxFloat”转换到“int”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(35,36): warning C4244: “函数”: 从“simxFloat”转换到“int”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(37,10): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(44,10): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(45,10): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(48,43): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(51,14): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(52,11): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(53,11): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(55,44): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(58,39): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(60,22): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(62,21): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(65,30): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(66,30): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(67,20): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(68,31): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(69,32): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(70,20): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(71,20): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(72,20): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(78,9): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(79,31): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(83,10): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(84,32): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(86,10): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(88,10): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+D:\git-repository\v-rep\v-rep_freertos\src\ik.c(94,40): warning C4244: “=”: 从“double”转换到“simxFloat”，可能丢失数据
+  main.c
+D:\git-repository\v-rep\v-rep_freertos\src\main.c(42,28): warning C4113: “void (__cdecl *)(void)”和“TaskFunction_t”的参数列表不同
+  motor.c
+  正在生成代码...
+  LINK : 没有找到 D:\git-repository\v-rep\v-rep_freertos\Debug\v-rep_freertos.exe 或上一个增量链接没有生成它；正在执行完全链接
+  v-rep_freertos.vcxproj -> D:\git-repository\v-rep\v-rep_freertos\Debug\v-rep_freertos.exe

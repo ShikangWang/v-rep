@@ -14,19 +14,36 @@ simxInt InverseKinematics(position_typedef position, simxFloat a[6])
 	y = position.y - L * position.R0D[1][2];
 	z = position.z - L * position.R0D[2][2];
 	simxFloat r = x * x + y * y + z * z;//绝对距离
-	simxFloat f1, f2, f3, g1, g2, g3;//中间变量
+	simxFloat m, t1, t2, f1, f2, f3, g1, g2, g3;//中间变量
 	simxFloat R03Trans[3][3];//0from3
 	simxFloat R36[3][3] = {0,0,0,0,0,0,0,0,0};//6from3
 	memset(a, 0, 6 * sizeof(simxFloat));
 
-	if (r > (A2 + D4) * (A2 + D4) || r < (A2 - D4) * (A2 - D4))
-		return 0;//超出机械臂范围
+	//if (r > (A2 + D4) * (A2 + D4) || r < (A2 - D4) * (A2 - D4))
+	//	return 0;//超出机械臂范围
+	m = A1 * A1 + A2 * A2 + D3 * D3 + D4 * D4;
+	a[2] = asin((m - r) / (2 * A2 * D4));//a[2]求解
 
-	a[2] = asin((D4 * D4 + A2 * A2 - r) / (2 * A2 * D4));//a[2]求解
+	//带A1和D3的a[2]求解
+	t1 = (m - r) / 2 - A1 * A1 + A1 * sqrt( r- D3 * D3 - z * z);
+	t2 = (m - r) / 2 - A1 * A1 - A1 * sqrt( r - D3 * D3 - z * z);
+
+	if (abs(t1) < A2 * D4 || abs(t1) == A2 * D4)
+	{
+		a[2] = asin(t1 / (A2 * D4));
+	}
+	else if (abs(t2) < A2 * D4 || abs(t2) == A2 * D4)
+	{
+		a[2] = asin(t2 / (A2 * D4));
+	}
+	else
+	{
+		return 0;
+	}
 
 	f1 = A2 - D4 * sin(a[2]);
 	f2 = D4 * cos(a[2]);
-	f3 = 0;
+	f3 = D3;
 
 	a[1] = asin(z / sqrt(f1 * f1 + f2 * f2)) - atan2(f2, f1);//a[1]求解
 	if (a[1] < 0)
@@ -34,11 +51,11 @@ simxInt InverseKinematics(position_typedef position, simxFloat a[6])
 		a[2] = -PI - a[2];
 		f1 = A2 - D4 * sin(a[2]);
 		f2 = D4 * cos(a[2]);
-		f3 = 0;
+		f3 = D3;
 		a[1] = asin(z / sqrt(f1 * f1 + f2 * f2)) - atan2(f2, f1);//a[1]求解
 	}
 
-	g1 = cos(a[1]) * f1 - sin(a[1]) * f2;
+	g1 = cos(a[1]) * f1 - sin(a[1]) * f2 + A1;
 	g2 = -f3;
 	g3 = sin(a[1]) * f1 + cos(a[1]) * f2;
 	

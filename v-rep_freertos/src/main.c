@@ -23,24 +23,28 @@ int main()
 		memcpy(src.R0D, R0D_default, 9 * sizeof(simxInt));
 		memcpy(mid.R0D, R0D_default, 9 * sizeof(simxInt));
 		memcpy(dst.R0D, R0D_default, 9 * sizeof(simxInt));
-		src.x = 350;
+		src.x = 600;
 		src.y = -500;
-		src.z = 1000;
+		src.z = 900;
 
-		mid.x = -400;
-		mid.y = -400;
-		mid.z = 600;
+		mid.x = 500;
+		mid.y = 500;
+		mid.z = 700;
 
-		dst.x = -500;
+		dst.x = -600;
 		dst.y = 500;
-		dst.z = 800;
+		dst.z = 900;
+
+		dummy.x = 550;
+		dummy.y = 400;
+		dummy.z = 900;
 
 		xTaskCreate(jointCtrlTask, "jointCtrlTask", 1000, NULL, 3, NULL);
 		vTaskStartScheduler();
 		printf("Start scheduler\n");
 		while (1)
 		{
-			
+			//ArmPositionCtrl(dummy);
 
 			//用于测试机械臂整体控制
 			//count++;
